@@ -1,0 +1,37 @@
+﻿@model Parkway.Report.ReportGenerator
+
+@if (Model.Headers != null)
+{
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Select Report Headers</th>
+        <th>Enter the header name to be displayed</th>
+    </tr>
+
+    @{int counter = 0;
+    }
+    @foreach (var header in Model.Headers)
+    {
+
+        var checkboxName = "checkboxName" + counter;
+        var textfieldName = "textfieldName" + counter;
+
+
+        <tr>
+
+            <td>
+                <input type="checkbox" name="@checkboxName" value="@header.Value" /><label>@*TestPartial*@ @header.Value</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" name="@textfieldName" />
+            </td>
+        </tr>
+        counter++;
+
+    }
+</table>
+}
+else
+{
+   
+}

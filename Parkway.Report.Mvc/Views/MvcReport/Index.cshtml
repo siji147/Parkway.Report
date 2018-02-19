@@ -1,0 +1,135 @@
+﻿@model Parkway.Report.ReportGenerator
+
+@{
+    ViewBag.Title = "Report Generator";
+}
+
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Report Generator</h4></div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label>Select Report</label>
+                    @*@Html.DropDownList("ReportsDropDownList", new SelectList(Model.TypeList.Keys.Select(x=>x.Title),Model.TypeList.Keys.Select(x=>x.Title)),"Select Report")*@
+
+                    <select name="ReportsDropDownList" class="form-control" id="DropDownList">
+                        <option label="Select a report"></option>
+                        @foreach (var kvc in Model.TypeList)
+                        {
+                            <option value="@kvc.Key.Title">@kvc.Key.Title</option>
+
+                        }
+                    </select>
+                    <br />
+
+                    <div id="partialViewContainer">
+
+
+                    </div>
+
+
+
+                    @*@Html.Partial("_PartialIndex", Model)*@
+                </div>
+
+                <div class="text-center">
+                    <input class="btn btn-success" type="submit" value="Generate Reports" />
+                </div>
+            }
+
+        </div>
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@if (Model.Headers == null)
+    {
+
+    }
+    else
+    {*@
+
+
+
+
+@*@{ Html.RenderPartial("_PartialIndex", Model); }*@
+@*Html.Partial("_PartialIndex", Model);*@
+
+
+
+@*}*@
+
+
+@*<div class="form-group" style="align-content:center">*@
+@*<label>Report Header</label>
+    <input type="text" class="form-control" value="" />*@
+
+@*</div>*@
+
+
+@*@kvc.Value.FullName*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>@Model.Title</h2>
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            @foreach (var header in Model.Headers)
+            {
+                <th>@header</th>
+            }
+        </tr>
+        @foreach (string rec in Model.RecordsInTable)
+        {
+            <tr>
+                @{var records = rec.Split(','); }
+                @foreach (var item in records)
+                {
+                    <td>@item</td>
+                }
+            </tr>
+
+        }
+
+    </table>*@

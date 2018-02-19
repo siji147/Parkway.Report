@@ -1,0 +1,34 @@
+﻿@model Parkway.Report.ReportGenerator
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+
+
+
+    <table class="table table-bordered table-hover " id="myTable">
+        <thead>
+        <tr>
+            @foreach (var header in Model.NewReportHeaders)
+            {
+                <th>@header</th>
+                
+            }
+        </tr>
+            </thead>
+        <tbody>
+        @foreach (string rec in Model.RecordsInTable)
+        {
+            <tr>
+                @{var records = rec.Split(','); }
+                @foreach (var item in records)
+                {
+                    <td>@item</td>
+                }
+            </tr>
+
+        }
+            </tbody>
+
+    </table>

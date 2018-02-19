@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<parkway.tools.nhibernate>
+  <SessionFactory name="Parkway.Report.Mvc" delay-initialization="false" schema-output-file="C:\Users\Sijibomi\Documents\Visual Studio 2017\Projects\Scripts\ParkwayReportMvc.sql">
+    <property name="dialect" value="NHibernate.Dialect.MsSql2012Dialect" />
+    <property name="connection.provider" value="NHibernate.Connection.DriverConnectionProvider" />
+    <property name="connection.driver_class" value="NHibernate.Driver.SqlClientDriver" />
+    <property name="connection.connection_string" value="Server=.;initial catalog=NhibernateDemo;User ID=sa;Password=password@1" />
+    <property name="connection.isolation" value="Serializable" />
+    <property name="cache.use_second_level_cache" value="false"/>
+    <property name="cache.use_query_cache" value="false"/>
+    <property name="show_sql" value="false" />
+    <property name="generate_statistics" value="true" />
+    <MappingAssemblies>
+      <mapping assembly="Parkway.Report.Mvc" ></mapping>
+    </MappingAssemblies>
+  </SessionFactory>
+</parkway.tools.nhibernate>

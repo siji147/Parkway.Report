@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Parkway.Report.Mvc" namespace="Parkway.Report.Mvc.Models">
+  <class name="Employee">
+    <id name="ID">
+      <generator class="native" />
+    </id>
+    <property name="Name" />
+    <property name="Age" />
+    <property name="Sex" />
+    <property name="State" />
+  </class>
+</hibernate-mapping>
